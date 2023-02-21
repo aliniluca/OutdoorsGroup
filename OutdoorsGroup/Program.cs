@@ -1,11 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using OutdoorsGroup.Data;
+using OutdoorsGroup.Interfaces;
+using OutdoorsGroup.Repository;
 using RunGroopWebApp.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IClubRepository, ClubRepository>();
+builder.Services.AddScoped<IRaceRepository, RaceRepository>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); ;

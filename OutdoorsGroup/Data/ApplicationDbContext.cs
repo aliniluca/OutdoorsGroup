@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using Microsoft.EntityFrameworkCore;
 using OutdoorsGroup.Models;
 
 namespace OutdoorsGroup.Data

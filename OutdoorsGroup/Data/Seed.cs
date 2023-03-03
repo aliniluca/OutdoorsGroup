@@ -28,7 +28,7 @@ namespace RunGroopWebApp.Data
                             ClubCategory = ClubCategory.City,
                             Address = new Address()
                             {
-                                Street = "King Str 3",
+                                Street = "Wall Str 3",
                                 City = "Los Angeles",
                                 State = "NY"
                             }
@@ -41,7 +41,7 @@ namespace RunGroopWebApp.Data
                             ClubCategory = ClubCategory.Endurance,
                             Address = new Address()
                             {
-                                Street = "King Str 3",
+                                Street = "Wine Str 3",
                                 City = "Los Angeles",
                                 State = "NY"
                             }
@@ -54,7 +54,7 @@ namespace RunGroopWebApp.Data
                             ClubCategory = ClubCategory.Trail,
                             Address = new Address()
                             {
-                                Street = "King Str 3",
+                                Street = "Milk Str 3",
                                 City = "Los Angeles",
                                 State = "NY"
                             }
@@ -67,12 +67,14 @@ namespace RunGroopWebApp.Data
                             ClubCategory = ClubCategory.City,
                             Address = new Address()
                             {
-                                Street = "King Str 3",
+                                Street = "Ark Str 3",
                                 City = "Michigan",
                                 State = "NY"
                             }
                         }
-                    });
+                    }
+                    );
+
                     context.SaveChanges();
                 }
                 //Races
@@ -113,62 +115,62 @@ namespace RunGroopWebApp.Data
             }
         }
 
-        //public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
-        //{
-        //    using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
-        //    {
-        //        //Roles
-        //        var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
+        {
+            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+            {
+                //Roles
+                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-        //        if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
-        //            await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
-        //        if (!await roleManager.RoleExistsAsync(UserRoles.User))
-        //            await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+                if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+                if (!await roleManager.RoleExistsAsync(UserRoles.User))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
 
-        //        //Users
-        //        var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
-        //        string adminUserEmail = "teddysmithdeveloper@gmail.com";
+                //Users
+                var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+                string adminUserEmail = "alin.iluca95@gmail.com";
 
-        //        var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
-        //        if (adminUser == null)
-        //        {
-        //            var newAdminUser = new AppUser()
-        //            {
-        //                UserName = "teddysmithdev",
-        //                Email = adminUserEmail,
-        //                EmailConfirmed = true,
-        //                Address = new Address()
-        //                {
-        //                    Street = "King Str 3",
-        //                    City = "Los Angeles",
-        //                    State = "NY"
-        //                }
-        //            };
-        //            await userManager.CreateAsync(newAdminUser, "Testing2023!");
-        //            await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
-        //        }
+                var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
+                if (adminUser == null)
+                {
+                    var newAdminUser = new AppUser()
+                    {
+                        UserName = "aliniluca",
+                        Email = adminUserEmail,
+                        EmailConfirmed = true,
+                        Address = new Address()
+                        {
+                            Street = "ArrowStr",
+                            City = "NewYork",
+                            State = "NY"
+                        }
+                    };
+                    await userManager.CreateAsync(newAdminUser, "Outdoors2023?");
+                    await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
+                }
 
-        //        string appUserEmail = "user@etickets.com";
+                string appUserEmail = "alin.iluca@gmail.com";
 
-        //        var appUser = await userManager.FindByEmailAsync(appUserEmail);
-        //        if (appUser == null)
-        //        {
-        //            var newAppUser = new AppUser()
-        //            {
-        //                UserName = "app-user",
-        //                Email = appUserEmail,
-        //                EmailConfirmed = true,
-        //                Address = new Address()
-        //                {
-        //                    Street = "King Str 3",
-        //                    City = "Los Angeles",
-        //                    State = "NY"
-        //                }
-        //            };
-        //            await userManager.CreateAsync(newAppUser, "Testing2023!");
-        //            await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
-        //        }
-        //    }
-        //}
+                var appUser = await userManager.FindByEmailAsync(appUserEmail);
+                if (appUser == null)
+                {
+                    var newAppUser = new AppUser()
+                    {
+                        UserName = "alin",
+                        Email = appUserEmail,
+                        EmailConfirmed = true,
+                        Address = new Address()
+                        {
+                            Street = "Arrow Street",
+                            City = "NetYork",
+                            State = "NY"
+                        }
+                    };
+                    await userManager.CreateAsync(newAppUser, "Outdoors2023?");
+                    await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
+                }
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using OutdoorsGroup.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using OutdoorsGroup.Models;
 
 namespace OutdoorsGroup.Interfaces
 {
@@ -6,6 +7,11 @@ namespace OutdoorsGroup.Interfaces
     {
         Task<List<Race>> GetAllUserRaces();
         Task<List<Club>> GetAllUserClubs();
-      
+        Task<AppUser> GetUserById(string id);
+        Task<AppUser> GetByIdNoTracking(string id);
+        bool Update(AppUser user);
+        bool Save();
+
+
     }
 }

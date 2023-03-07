@@ -4,7 +4,7 @@ using OutdoorsGroup.Data;
 using OutdoorsGroup.Models;
 
 
-namespace RunGroopWebApp.Data
+namespace OutdoorsGroup.Data
 {
     public class Seed
     {

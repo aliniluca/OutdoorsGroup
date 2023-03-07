@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using OutdoorsGroup.Models;
+﻿using OutdoorsGroup.Models;
 
 namespace OutdoorsGroup.Interfaces
 {
@@ -11,7 +10,5 @@ namespace OutdoorsGroup.Interfaces
         Task<AppUser> GetByIdNoTracking(string id);
         bool Update(AppUser user);
         bool Save();
-
-
     }
 }

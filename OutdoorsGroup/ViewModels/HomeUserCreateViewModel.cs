@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+
 namespace OutdoorsGroup.ViewModels
 {
     public class HomeUserCreateViewModel

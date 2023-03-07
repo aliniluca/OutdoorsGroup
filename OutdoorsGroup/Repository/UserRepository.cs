@@ -9,11 +9,11 @@ namespace OutdoorsGroup.Repository
     {
         private readonly ApplicationDbContext _context;
 
-
         public UserRepository(ApplicationDbContext context)
         {
             _context = context;
         }
+
         public bool Add(AppUser user)
         {
             throw new NotImplementedException();
